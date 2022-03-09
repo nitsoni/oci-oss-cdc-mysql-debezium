@@ -1,0 +1,86 @@
+# Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+
+title: "Quick start to CDC setup using Debezium Mysql Connector."
+stackDescription: "A Quick start which will setup the Debezium Mysql connector for CDC."
+schemaVersion: 1.1.0
+version: "20200301"
+locale: "en"
+
+variableGroups:
+- title: ${Messages.solutionsHub.generalConfig()}
+  visible: false
+  variables:
+  - tenancy_ocid
+  - current_user_ocid
+  - fingerprint
+  - private_key_path
+  - VCN-CIDR
+  - mysql_db_size
+  - instance_os
+  - linux_os_version
+  - instance_flex_shape_ocpus
+  - instance_flex_shape_memory
+  - instance_shape
+  - mysql_shape
+  - generate_public_ssh_key
+  - ssh_public_key
+  - public_ssh_key
+  - private_ssh_key_path
+
+- title: ${Messages.solutionsHub.requiredConfig()}
+  visible: true  
+  variables:
+  - compartment_ocid
+  - region
+  - mysql_db_name
+  - admin_username
+  - admin_password
+
+variables:
+
+  compartment_ocid:
+    type: oci:identity:compartment:id
+    required: true
+    title: ${Messages.solutionsHub.genericVariables.compartment.title()}
+    description: ${Messages.solutionsHub.genericVariables.compartment.description()}
+
+  region:
+    type: oci:identity:region:name
+    required: true
+    title: "Region"
+    description: "Region where the stack will be deployed."
+
+  mysql_db_name:
+    type: string
+    required: false
+    title: "Mysql DB name"
+    description: "Mysql DB name."
+
+  admin_username:
+    type: string
+    required: true
+    title: "Mysql Username"
+    description: "Mysql admin username."
+
+  admin_password:
+    type: password
+    description: Mysql admin password
+    title: "Mysql Password"
+    confirmation: true
+    required: true
+
+  # generate_public_ssh_key:
+  #   type: boolean
+  #   required: true
+  #   title: "Auto-generate public ssh key?"
+  #   description: "Auto-generate a public key and assign to the compute instances. Uncheck to provide your own public key."
+
+  # ssh_public_key:
+  #   type: oci:core:ssh:publickey
+  #   required: true
+  #   title: "SSH Public Key"
+  #   description: "The public SSH key for the key-pair that you want to use, for logging in to the instances over SSH."
+  #   pattern: "((^(ssh-rsa AAAAB3NzaC1yc2|ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNT|ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzOD|ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1Mj|ssh-ed25519 AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)(,((ssh-rsa AAAAB3NzaC1yc2|ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNT|ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzOD|ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1Mj|ssh-ed25519 AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)*$"
+  #   visible: generate_public_ssh_key
+
