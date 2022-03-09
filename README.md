@@ -19,7 +19,7 @@ If you don't have the required permissions and quota, contact your tenancy admin
 
 ## Deploy Using Oracle Resource Manager
 
-1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/nitsoni/oci-sch-log2bucket/releases/latest/download/oci-oss-cdc-mysql-debezium-latest.zip)
+1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/nitsoni/oci-oss-cdc-mysql-debezium/releases/latest/download/oci-oss-cdc-mysql-debezium-latest.zip)
 
     If you aren't already signed in, when prompted, enter the tenancy and user credentials.
 
@@ -43,8 +43,8 @@ If you don't have the required permissions and quota, contact your tenancy admin
 ### Clone the Module
 Now, you'll want a local copy of this repo. You can make that with the commands:
 
-    git clone https://github.com/oracle-quickstart/oci-oss-mirrormaker.git
-    cd oci-oss-mirrormaker
+    git clone https://github.com/nitsoni/oci-oss-cdc-mysql-debezium
+    cd oci-oss-cdc-mysql-debezium
     ls
 
 ### Set Up and Configure Terraform
