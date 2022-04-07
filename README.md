@@ -43,7 +43,7 @@ If you don't have the required permissions and quota, contact your tenancy admin
 ### Clone the Module
 Now, you'll want a local copy of this repo. You can make that with the commands:
 
-    git clone https://github.com/nitsoni/oci-oss-cdc-mysql-debezium
+    git clone https://github.com/oracle-quickstart/oci-oss-cdc-mysql-debezium
     cd oci-oss-cdc-mysql-debezium
     ls
 
@@ -82,7 +82,7 @@ When you no longer need the deployment, you can run this command to destroy the 
 
 
 ## Post Deployment
-Once the resources are deployed either through CLI or through resource manager run the following commands on the instance. (Use the pricate key generated to login tot he instance)
+Once the resources are deployed either through CLI or through resource manager run the following commands on the instance. (Use the private key generated to login to the instance)
 - Start the kafka connect. Configuration file has allready been created as part of deployment.
 - Start the Debezium mysql connector. Connector configuration is also generated as part of deployemnt.
 - Create the sample employee DB. Sample scripts allready copied.
