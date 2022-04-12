@@ -82,20 +82,12 @@ resource "null_resource" "run_scripts" {
       "wget https://repo1.maven.org/maven2/io/debezium/debezium-connector-mysql/1.2.5.Final/debezium-connector-mysql-1.2.5.Final-plugin.tar.gz",
       "tar -xvf debezium-connector-mysql-1.2.5.Final-plugin.tar.gz",
       "cp debezium-connector-mysql/*.jar kafka/libs/",
-      # "echo 'Starrting Kafka Connect'",
-      # "nohup ./kafka/bin/connect-distributed.sh connect-distributed.properties >> connect.logs &",
-      # "sleep 3",
       "echo 'Downloading sample employee DB.'",
       "wget https://github.com/datacharmer/test_db/releases/download/v1.0.7/test_db-1.0.7.tar.gz",
       "tar -xvf test_db-1.0.7.tar.gz",
       "sleep 5",
       "sudo yum install mysql -y",
       "mysql --host 10.0.1.3 -u ${var.admin_username} --password=${var.admin_password} -e \"ALTER USER '${var.admin_username}'@'%' IDENTIFIED WITH mysql_native_password BY '${var.admin_password}';\""
-      # "echo 'Start Debezium connector'",
-      # "curl -i -X POST -H \"Accept:application/json\" -H \"Content-Type:application/json\" localhost:8083/connectors/ -d @connector.json",
-      # "sleep 2",
-      # "cd test_db",
-      # "mysql --host 10.0.1.3 -u ${var.admin_username} --password=${var.admin_password} -t -f < employees.sql"
     ]
   }
 
